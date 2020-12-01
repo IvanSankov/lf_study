@@ -16,6 +16,14 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ]
+  },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
