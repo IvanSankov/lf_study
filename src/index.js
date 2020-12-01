@@ -1,7 +1,8 @@
 import Text from "./helpers/text";
 import CustomImage from "./helpers/image";
 
-import './style.css';
+import './styles/style1.scss'
+import './styles/style.css';
 
 import img from './assets/nichoci.png';
 
