@@ -1,5 +1,6 @@
 import React from 'react';
 import Welcome from "./components/Welcome";
+import UserList from "./components/UserList";
 
 class App extends React.Component {
   render() {
@@ -7,6 +8,7 @@ class App extends React.Component {
       <>
         <Welcome name="Mars" />
         <Welcome />
+        <UserList />
       </>
     )
   }
