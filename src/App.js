@@ -1,8 +1,9 @@
 import React from 'react';
+import Welcome from "./components/Welcome";
 
 class App extends React.Component {
   render() {
-    return <div>Hello world!</div>
+    return <Welcome name="Mars" />
   }
 }
 
