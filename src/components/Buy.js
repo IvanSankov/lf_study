@@ -1,7 +1,8 @@
 import React from 'react';
+import WrapperText from "./WrapperText";
 
 function Buy({ lastName, age }) {
-  return <div>Buy { lastName }. Age { age }</div>
+  return <WrapperText>Buy { lastName }. Age { age }</WrapperText>
 }
 
 export default Buy;

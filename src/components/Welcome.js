@@ -1,5 +1,6 @@
 import React from 'react';
 import Buy from "./Buy";
+import WrapperText from "./WrapperText";
 
 class Welcome extends React.Component{
   constructor(props) {
@@ -16,7 +17,7 @@ class Welcome extends React.Component{
       return <Buy age={age} lastName={lastName} />
     }
 
-    return <div>Hello {name || '%Username%'}!</div>
+    return <WrapperText>Hello {name || '%Username%'}!</WrapperText>;
   }
 }
 

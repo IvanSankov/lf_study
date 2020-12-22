@@ -9,7 +9,10 @@ class App extends React.Component {
     return (
       <>
         <Header title="New Header" main />
-        <Modal />
+        <Modal>
+          Children
+          <p>Another Children</p>
+        </Modal>
         <Welcome name="Mars" lastName="Earth" age={39} orders={['#123', '#qwe', '#zz3']} />
         <Welcome />
         <UserList />

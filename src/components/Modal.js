@@ -5,7 +5,7 @@ import Welcome from "./Welcome";
 class Modal extends React.Component {
   render() {
     return ReactDOM.createPortal(
-      <Welcome name="Modal" />,
+      this.props.children,
       document.getElementById('root-modal'),
     )
   }
