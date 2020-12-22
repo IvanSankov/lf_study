@@ -8,7 +8,7 @@ class App extends React.Component {
     return (
       <>
         <Modal />
-        <Welcome name="Mars" />
+        <Welcome name="Mars" lastName="Earth" age={39} orders={['#123', '#qwe', '#zz3']} />
         <Welcome />
         <UserList />
       </>
