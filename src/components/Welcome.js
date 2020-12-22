@@ -1,4 +1,5 @@
 import React from 'react';
+import Buy from "./Buy";
 
 class Welcome extends React.Component{
   constructor(props) {
@@ -12,7 +13,7 @@ class Welcome extends React.Component{
     const { name, lastName, age, orders } = this.props;
 
     if (lastName) {
-      return <div>Buy { lastName }. Age { age }</div>
+      return <Buy age={age} lastName={lastName} />
     }
 
     return <div>Hello {name || '%Username%'}!</div>
