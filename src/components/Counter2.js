@@ -8,8 +8,14 @@ export default function Counter2() {
     secondName: 'Ivanov',
   });
 
+  const updater = (prevState) => {
+    let newState = prevState + 1
+
+    return newState
+  }
+
   const increase = () => {
-    setCounter(prevCounter => prevCounter + 1);
+    setCounter(updater);
     setShowInfo(false);
   }
 
