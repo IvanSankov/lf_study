@@ -35,11 +35,18 @@ export default class WelcomeModal extends React.Component {
   render() {
     const { isOpen } = this.state;
 
+    let modalClassNames = 'default-modal-class';
+    if (isOpen) {
+      modalClassNames += ' opened';
+    } else {
+      modalClassNames += ' closed'
+    }
+
     return (
       <>
         <button onClick={() => this.toggle()}>Show welcome modal</button>
         <Modal>
-          <div style={isOpen ? style.opened : style.closed}>
+          <div className={modalClassNames} style={isOpen ? style.opened : style.closed}>
             Hi, %Username%
             <button onClick={() => this.toggle()}>Close modal</button>
           </div>
