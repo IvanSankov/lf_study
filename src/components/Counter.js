@@ -14,7 +14,7 @@ export default class Counter extends React.Component {
     this.setState(prevState => {
       return {
         counter: prevState.counter + 1,
-        showInfo: false
+        showInfo: false,
       }
     });
   }
