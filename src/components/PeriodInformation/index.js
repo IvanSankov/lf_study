@@ -13,13 +13,29 @@ export default class PeriodInformation extends React.PureComponent {
     this.state = {
       isLoading: true,
       data: [],
+      buttons: [
+        {
+          isChecked: true,
+          value: 'day'
+        },
+        {
+          isChecked: false,
+          value: 'week'
+        },
+        {
+          isChecked: false,
+          value: 'month',
+        },
+      ]
     }
+
+    this.onChange = this.onChange.bind(this);
   }
 
-  componentDidMount() {
+  getPeriodInfo(period) {
     const client = new Client();
 
-    client.getPeriodInfo('rec6WVudlthBeyrKY')
+    client.getPeriodInfo(period)
       .then(data => {
         this.setState({
           isLoading: false,
@@ -28,8 +44,32 @@ export default class PeriodInformation extends React.PureComponent {
       });
   }
 
+  componentDidMount() {
+    this.getPeriodInfo('rec6WVudlthBeyrKY');
+  }
+
+  onChange(event) {
+    const value = event.target.value;
+    this.setState(prevState => {
+      return {
+        isLoading: true,
+        buttons: prevState.buttons.map(btn => {
+          const cloneBtn = {...btn, isChecked: false};
+          if (cloneBtn.value === value) {
+            cloneBtn.isChecked = true;
+          }
+
+          return cloneBtn;
+        })
+      }
+    })
+
+    // this.getPeriodInfo(value);
+    this.getPeriodInfo('rec6WVudlthBeyrKY');
+  }
+
   render() {
-    const { isLoading, data } = this.state;
+    const { isLoading, data, buttons } = this.state;
 
     if (isLoading) {
       return <Loader />
@@ -38,7 +78,7 @@ export default class PeriodInformation extends React.PureComponent {
 
     return (
       <div>
-        <SearchButtons />
+        <SearchButtons buttons={buttons} handler={this.onChange} />
         <Results data={data} />
       </div>
     );
