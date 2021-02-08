@@ -5,6 +5,7 @@ import Results from "./Results";
 import Loader from "./Loader";
 
 import Client from "../../http/Client";
+import Error from "./Error";
 
 export default class PeriodInformation extends React.PureComponent {
   constructor(props) {
@@ -26,7 +27,8 @@ export default class PeriodInformation extends React.PureComponent {
           isChecked: false,
           value: 'month',
         },
-      ]
+      ],
+      error: null,
     }
 
     this.onChange = this.onChange.bind(this);
@@ -40,6 +42,12 @@ export default class PeriodInformation extends React.PureComponent {
         this.setState({
           isLoading: false,
           data,
+        })
+      })
+      .catch(reason => {
+        this.setState({
+          isLoading: false,
+          error: reason.message,
         })
       });
   }
@@ -69,17 +77,16 @@ export default class PeriodInformation extends React.PureComponent {
   }
 
   render() {
-    const { isLoading, data, buttons } = this.state;
+    const { isLoading, data, buttons, error } = this.state;
 
     if (isLoading) {
       return <Loader />
     }
 
-
     return (
       <div>
         <SearchButtons buttons={buttons} handler={this.onChange} />
-        <Results data={data} />
+        { !error ? <Results data={data} /> : <Error message={error} />}
       </div>
     );
   }
