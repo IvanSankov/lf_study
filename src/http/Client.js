@@ -48,4 +48,10 @@ export default class Client {
       .get('/TestData/recUtgEro7oOsRAPw')
       .then(response => response.data);
   }
+
+  getUserById(id) {
+    return this.client
+      .get(`/User/${id}`)
+      .then(response => response.data);
+  }
 }

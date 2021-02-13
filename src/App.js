@@ -1,17 +1,20 @@
 import React from 'react';
-import TarkovCard from "./components/TarkovCard";
-import ApexCard from "./components/ApexCard";
-import TarkovCard2 from "./components/TarkovCard2";
-import TarkovCard2Class from "./components/TarkovCard2Class";
-
+import Header from "./components/contextExample/Header";
+import Footer from "./components/contextExample/Footer";
+import Content from "./components/contextExample/Content";
+import UserProvider from "./components/contextExample/UserProvider";
 
 class App extends React.Component {
   render() {
     return (
       <>
-        <TarkovCard2 title={'Tarkov game'} description={'qwe qwe qwe qweqwe qwe'} />
-        <p>-------------------------------------</p>
-        <TarkovCard2Class title={'Tarkov game'} description={'qwe qwe qwe qweqwe qwe'} />
+        <UserProvider>
+          <Header/>
+
+          <Content/>
+
+          <Footer/>
+        </UserProvider>
       </>
     )
   }
