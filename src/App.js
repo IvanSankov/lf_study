@@ -1,11 +1,14 @@
 import React from 'react';
-import PeriodInformation from "./components/PeriodInformation";
+import TarkovCard from "./components/TarkovCard";
+import ApexCard from "./components/ApexCard";
+
 
 class App extends React.Component {
   render() {
     return (
       <>
-        <PeriodInformation />
+        <TarkovCard />
+        <ApexCard />
       </>
     )
   }

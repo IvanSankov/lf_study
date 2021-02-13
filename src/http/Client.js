@@ -36,4 +36,16 @@ export default class Client {
         ];
       })
   }
+
+  getTarkovOffer() {
+    return this.client
+      .get('/TestData/rec6WVudlthBeyrKY')
+      .then(response => response.data);
+  }
+
+  getApexOffer() {
+    return this.client
+      .get('/TestData/recUtgEro7oOsRAPw')
+      .then(response => response.data);
+  }
 }
