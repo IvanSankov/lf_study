@@ -6,6 +6,7 @@ import UserProvider from "./components/contextExample/UserProvider";
 import Form1 from "./components/FormExample/Form1";
 import Form2 from "./components/FormExample/Form2";
 import ReactHookForm from "./components/FormExample/ReactHookForm";
+import UserForm from "./components/FormExample/UserForm";
 
 class App extends React.Component {
   render() {
@@ -14,7 +15,7 @@ class App extends React.Component {
         <UserProvider>
           <Header/>
 
-          <ReactHookForm />
+          <UserForm />
 
           <Footer/>
         </UserProvider>

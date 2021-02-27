@@ -54,4 +54,16 @@ export default class Client {
       .get(`/User/${id}`)
       .then(response => response.data);
   }
+
+  createNewUser(data) {
+    return this.client
+      .post('/User', {
+        records: [
+          {
+            fields: data
+          }
+        ]
+      })
+      .then(response => response.data)
+  }
 }
