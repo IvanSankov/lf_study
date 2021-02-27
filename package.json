@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "react-hook-form": "^6.15.4"
   }
 }
